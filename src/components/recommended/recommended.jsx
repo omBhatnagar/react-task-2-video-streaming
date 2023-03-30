@@ -14,7 +14,6 @@ const Recommended = () => {
 			setIsLoading(true);
 			const response = await getRecommended();
 			const _videoCards = await createVideoCards(response.data.items);
-			console.log(_videoCards);
 			setVideoCards(_videoCards);
 			setIsLoading(false);
 		})();
@@ -26,6 +25,7 @@ const Recommended = () => {
 				? Array(10).fill(<SkeletonCard />)
 				: videoCards.map((video) => (
 						<VideoCard
+							key={video.id}
 							image={video.image}
 							title={video.title}
 							channel={video.channel}

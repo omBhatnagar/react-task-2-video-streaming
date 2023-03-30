@@ -1,10 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Recommended from "./components/recommended/recommended";
+import SearchPage from "./components/recommended/searchpage/searchpage";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Recommended />,
+	},
+	{
+		path: "/search/:searchQuery",
+		element: <SearchPage />,
 	},
 ]);
 

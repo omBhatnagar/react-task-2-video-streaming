@@ -1,6 +1,6 @@
 const formatRelativeDate = (date) => {
 	let diff = new Date() - date; // the difference in milliseconds
-	console.log("date", diff);
+
 	if (diff < 1000) {
 		// less than 1 second
 		return "right now";
