@@ -7,7 +7,7 @@ const VideoCard = ({
 	channelImage,
 }) => {
 	return (
-		<div className='bg-yt-black w-[28%] flex justify-center items-center'>
+		<div className='bg-yt-black w-[28%] flex justify-center items-stretch'>
 			<div className='w-full'>
 				<div className='flex justify-center items-center overflow-hidden rounded-2xl'>
 					<img className='shrink-0 min-w-full min-h-full' src={image} alt='' />
@@ -17,12 +17,16 @@ const VideoCard = ({
 						<img src={channelImage} alt='' />
 					</div>
 					<div className='flex flex-col text-md tracking-tighter leading-tight'>
-						<div className='text-white overflow-ellipsis'>{title}</div>
+						<div className='text-white overflow-ellipsis font-semibold'>
+							{title}
+						</div>
 						<div className='mt-1 flex items-baseline space-x-1'>
-							<div className='text-gray-400'>{channel}</div>
+							<div className='text-gray-400 text-sm'>{channel}</div>
 						</div>
 						<div className='text-gray-400'>
-							{views} views • {timestamp}
+							{views} <span className='text-sm'>views</span>
+							<span className='text-sm'> • </span>
+							{timestamp}
 						</div>
 					</div>
 				</div>

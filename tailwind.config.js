@@ -8,7 +8,7 @@ module.exports = {
 			colors: {
 				"light-blue": colors.lightBlue,
 				cyan: colors.cyan,
-				"yt-black": "#181818",
+				"yt-black": "#0f0f0f",
 			},
 		},
 	},

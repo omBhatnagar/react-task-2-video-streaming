@@ -21,7 +21,7 @@ const Recommended = () => {
 	}, []);
 
 	return (
-		<div className='w-5/6 mx-auto flex flex-wrap justify-center items-center gap-4'>
+		<div className='w-5/6 mx-auto flex flex-wrap justify-center items-stretch gap-4'>
 			{isLoading
 				? Array(10).fill(<SkeletonCard />)
 				: videoCards.map((video) => (

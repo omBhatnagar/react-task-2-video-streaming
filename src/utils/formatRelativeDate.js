@@ -19,12 +19,12 @@ const formatRelativeDate = (date) => {
 
 	let hour = Math.floor(min / 60); // convert to hours
 	if (hour < 25) {
-		return hour + "hr(s). ago";
+		return hour + " hr(s). ago";
 	}
 
 	let day = Math.floor(hour / 24);
 	if (day < 8) {
-		return day + "day(s) ago";
+		return day + " day(s) ago";
 	}
 
 	// format the date
