@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { searchVideos } from "../../../api/youtube";
 import createSearchVideoRows from "../../../utils/createSearchVideoRows";
+import Layout from "../../layout/layout";
 import SearchRow from "../../searchrow/searchrow";
 import SearchRowSkeleton from "../../searchrowskeleton/searchrowskeleton";
 
@@ -71,21 +72,23 @@ const SearchPage = () => {
 	}, [searchQuery]);
 
 	return (
-		<div className='text-white'>
-			{isLoading
-				? Array(10).fill(<SearchRowSkeleton />)
-				: searchResults.map((item) => (
-						<SearchRow
-							title={item.title}
-							image={item.image}
-							views={item.views}
-							timestamp={item.timestamp}
-							channel={item.channel}
-							channelImage={item.channelImage}
-							description={item.description}
-						/>
-				  ))}
-		</div>
+		<Layout>
+			<div className='text-white'>
+				{isLoading
+					? Array(10).fill(<SearchRowSkeleton />)
+					: searchResults.map((item) => (
+							<SearchRow
+								title={item.title}
+								image={item.image}
+								views={item.views}
+								timestamp={item.timestamp}
+								channel={item.channel}
+								channelImage={item.channelImage}
+								description={item.description}
+							/>
+					  ))}
+			</div>
+		</Layout>
 	);
 };
 

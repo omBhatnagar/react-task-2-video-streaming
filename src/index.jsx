@@ -1,15 +1,28 @@
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
-import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
+import Recommended from "./components/recommended/recommended";
+import SearchPage from "./components/recommended/searchpage/searchpage";
+
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <Recommended />,
+	},
+	{
+		path: "/search/:searchQuery",
+		element: <SearchPage />,
+	},
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<App />
+		<RouterProvider router={router} />
 	</React.StrictMode>,
 );
 
