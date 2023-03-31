@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import { getRecommended } from "../../api/youtube";
 import createVideoCards from "../../utils/createVideoCards";
-import Layout from "../layout/layout";
-import SkeletonCard from "./skeletoncard/skeletoncard";
-import VideoCard from "./videocard/videocard";
+import Layout from "../../components/layout/layout";
+import SkeletonCard from "../../components/skeletoncard/skeletoncard";
+import VideoCard from "../../components/videocard/videocard";
 
 const Recommended = () => {
 	const [videoCards, setVideoCards] = useState([]);

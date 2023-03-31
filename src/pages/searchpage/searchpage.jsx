@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { searchVideos } from "../../../api/youtube";
-import createSearchVideoRows from "../../../utils/createSearchVideoRows";
-import Layout from "../../layout/layout";
-import SearchRow from "../../searchrow/searchrow";
-import SearchRowSkeleton from "../../searchrowskeleton/searchrowskeleton";
+import { searchVideos } from "../../api/youtube";
+import createSearchVideoRows from "../../utils/createSearchVideoRows";
+import Layout from "../../components/layout/layout";
+import SearchRow from "../../components/searchrow/searchrow";
+import SearchRowSkeleton from "../../components/searchrowskeleton/searchrowskeleton";
 
 const SearchPage = () => {
 	const { searchQuery } = useParams();

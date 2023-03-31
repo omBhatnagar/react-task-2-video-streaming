@@ -5,8 +5,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import reportWebVitals from "./reportWebVitals";
-import Recommended from "./components/recommended/recommended";
-import SearchPage from "./components/recommended/searchpage/searchpage";
+import Recommended from "./pages/recommended/recommended";
+import SearchPage from "./pages/searchpage/searchpage";
 
 const router = createBrowserRouter([
 	{
