@@ -7,6 +7,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Recommended from "./pages/recommended/recommended";
 import SearchPage from "./pages/searchpage/searchpage";
+import VideoPlayer from "./pages/videoplayer/videoplayer";
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
 	{
 		path: "/search/:searchQuery",
 		element: <SearchPage />,
+	},
+	{
+		path: "/video/:videoId",
+		element: <VideoPlayer />,
 	},
 ]);
 
