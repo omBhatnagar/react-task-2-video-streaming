@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getVideoStats } from "../../api/youtube";
 import Layout from "../../components/layout/layout";
+import SideBarRecommended from "../../components/sidebarrecommended/sidebarrecommended";
 
 import VideoDetails from "../../components/videodetails/videodetails";
 import VideoEmbed from "../../components/videoembed/videoembed";
@@ -40,8 +41,8 @@ const VideoPlayer = () => {
 
 	return (
 		<Layout>
-			<div className=''>
-				<div>
+			<div className='flex justify-center items-center gap-2'>
+				<div className='w-2/3'>
 					<VideoEmbed videoId={videoId} />
 					<VideoDetails
 						title={videoInfo.title}
@@ -54,6 +55,9 @@ const VideoPlayer = () => {
 						dislikeCount={videoInfo.dislikeCount}
 						subs={videoInfo.subs}
 					/>
+				</div>
+				<div className='w-1/4'>
+					<SideBarRecommended />
 				</div>
 			</div>
 		</Layout>
