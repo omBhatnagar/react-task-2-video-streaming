@@ -26,6 +26,18 @@ export const getChannelDetails = async (channelId) => {
 	}
 };
 
+export const getDetailedChannelDetails = async (channelId) => {
+	try {
+		const response = await axios.get(
+			`https://www.googleapis.com/youtube/v3/channels?part=snippet%2C%20statistics&id=${channelId}&key=${API_KEY}`,
+		);
+		return response;
+	} catch (error) {
+		console.log(error);
+		return [];
+	}
+};
+
 export const searchVideos = async (query) => {
 	try {
 		const response = await axios.get(

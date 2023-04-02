@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { searchVideos } from "../../api/youtube";
 
 import createSearchVideoRows from "../../utils/createSearchVideoRows";
@@ -79,15 +79,17 @@ const SearchPage = () => {
 				{isLoading
 					? Array(10).fill(<SearchRowSkeleton />)
 					: searchResults.map((item) => (
-							<SearchRow
-								title={item.title}
-								image={item.image}
-								views={item.views}
-								timestamp={item.timestamp}
-								channel={item.channel}
-								channelImage={item.channelImage}
-								description={item.description}
-							/>
+							<Link to={`/video/${item.videoId}`}>
+								<SearchRow
+									title={item.title}
+									image={item.image}
+									views={item.views}
+									timestamp={item.timestamp}
+									channel={item.channel}
+									channelImage={item.channelImage}
+									description={item.description}
+								/>
+							</Link>
 					  ))}
 			</div>
 		</Layout>

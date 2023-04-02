@@ -7,7 +7,7 @@ const VideoCard = ({
 	channelImage,
 }) => {
 	return (
-		<div className='bg-yt-black w-[28%] flex justify-center items-stretch'>
+		<div className='bg-yt-black w-full flex justify-center items-stretch'>
 			<div className='w-full'>
 				<div className='flex justify-center items-center overflow-hidden rounded-2xl'>
 					<img className='shrink-0 min-w-full min-h-full' src={image} alt='' />

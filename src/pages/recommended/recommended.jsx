@@ -5,6 +5,7 @@ import createVideoCards from "../../utils/createVideoCards";
 import Layout from "../../components/layout/layout";
 import SkeletonCard from "../../components/skeletoncard/skeletoncard";
 import VideoCard from "../../components/videocard/videocard";
+import { Link } from "react-router-dom";
 
 const Recommended = () => {
 	const [videoCards, setVideoCards] = useState([]);
@@ -26,15 +27,17 @@ const Recommended = () => {
 				{isLoading
 					? Array(10).fill(<SkeletonCard />)
 					: videoCards.map((video) => (
-							<VideoCard
-								key={video.id}
-								image={video.image}
-								title={video.title}
-								channel={video.channel}
-								views={video.views}
-								timestamp={video.timestamp}
-								channelImage={video.channelImage}
-							/>
+							<Link to={`/video/${video.videoId}`} className='w-[28%]'>
+								<VideoCard
+									key={video.id}
+									image={video.image}
+									title={video.title}
+									channel={video.channel}
+									views={video.views}
+									timestamp={video.timestamp}
+									channelImage={video.channelImage}
+								/>
+							</Link>
 					  ))}
 			</div>
 		</Layout>

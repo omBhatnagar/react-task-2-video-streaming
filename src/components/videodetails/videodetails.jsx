@@ -14,7 +14,7 @@ const VideoDetails = ({
 	subs,
 }) => {
 	return (
-		<div className='flex flex-col justify-cetner items-start gap-4'>
+		<div className='flex flex-col justify-cetner items-start gap-4 my-6'>
 			<h1 className='text-white font-semibold text-xl'>{title}</h1>
 			<div className='flex justify-between items-center pb-2 w-full'>
 				<div className='flex justify-center items-start gap-4'>
@@ -60,7 +60,7 @@ const VideoDetails = ({
 					</div>
 				</div>
 			</div>
-			<div className='bg-[#272727] text-white rounded-lg p-2'>
+			<div className='bg-[#272727] text-white rounded-lg p-2 w-full'>
 				<p className='font-semibold'>
 					{viewCount} views {publishedDate}
 				</p>
