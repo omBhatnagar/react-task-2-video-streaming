@@ -6,20 +6,31 @@ import Layout from "../../components/layout/layout";
 import SkeletonCard from "../../components/skeletoncard/skeletoncard";
 import VideoCard from "../../components/videocard/videocard";
 import { Link } from "react-router-dom";
+import Error from "../../components/error/error";
 
 const Recommended = () => {
 	const [videoCards, setVideoCards] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const [isError, setIsError] = useState(false);
 
 	useEffect(() => {
 		(async () => {
 			setIsLoading(true);
 			const response = await getRecommended();
-			const _videoCards = await createVideoCards(response.data.items);
-			setVideoCards(_videoCards);
-			setIsLoading(false);
+
+			if (response instanceof Array || response.data.items.length < 1) {
+				setIsError(true);
+				setIsLoading(false);
+			} else {
+				const _videoCards = await createVideoCards(response.data.items);
+				setVideoCards(_videoCards);
+				setIsLoading(false);
+				setIsError(false);
+			}
 		})();
 	}, []);
+
+	if (isError) return <Error />;
 
 	return (
 		<Layout>

@@ -7,23 +7,32 @@ import createSearchVideoRows from "../../utils/createSearchVideoRows";
 import Layout from "../../components/layout/layout";
 import SearchRow from "../../components/searchrow/searchrow";
 import SearchRowSkeleton from "../../components/searchrowskeleton/searchrowskeleton";
+import Error from "../../components/error/error";
 
 const SearchPage = () => {
 	const { searchQuery } = useParams();
 
 	const [searchResults, sestSearchResuls] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const [isError, setIsError] = useState(false);
 
 	useEffect(() => {
 		sestSearchResuls([]);
 		(async () => {
 			setIsLoading(true);
 			const response = await searchVideos(searchQuery);
-			const _searchResults = await createSearchVideoRows(response.data.items);
-			sestSearchResuls(_searchResults);
-			setIsLoading(false);
+			if (response instanceof Array || response.data.items.length < 1) {
+				setIsError(true);
+				setIsLoading(false);
+			} else {
+				const _searchResults = await createSearchVideoRows(response.data.items);
+				sestSearchResuls(_searchResults);
+				setIsLoading(false);
+			}
 		})();
 	}, [searchQuery]);
+
+	if (isError) return <Error />;
 
 	return (
 		<Layout>
