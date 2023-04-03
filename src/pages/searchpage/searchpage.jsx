@@ -14,54 +14,6 @@ const SearchPage = () => {
 	const [searchResults, sestSearchResuls] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const dummyData = [
-		{
-			views: "10000",
-			description:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime alias magnam quo beatae aperiam temporibus numquam a, quae facere consequatur incidunt, hic consequuntur. Similique, minus distinctio delectus voluptatem adipisci explicabo!",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			description:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime alias magnam quo beatae aperiam temporibus numquam a, quae facere consequatur incidunt, hic consequuntur. Similique, minus distinctio delectus voluptatem adipisci explicabo!",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			description:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime alias magnam quo beatae aperiam temporibus numquam a, quae facere consequatur incidunt, hic consequuntur. Similique, minus distinctio delectus voluptatem adipisci explicabo!",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			description:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime alias magnam quo beatae aperiam temporibus numquam a, quae facere consequatur incidunt, hic consequuntur. Similique, minus distinctio delectus voluptatem adipisci explicabo!",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			description:
-				"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime alias magnam quo beatae aperiam temporibus numquam a, quae facere consequatur incidunt, hic consequuntur. Similique, minus distinctio delectus voluptatem adipisci explicabo!",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-	];
-
 	useEffect(() => {
 		sestSearchResuls([]);
 		(async () => {

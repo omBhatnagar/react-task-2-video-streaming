@@ -23,65 +23,6 @@ const SideBarRecommended = ({ title }) => {
 		})();
 	}, [title]);
 
-	const dummyData = [
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-	];
-
 	return (
 		<div>
 			{isLoading
