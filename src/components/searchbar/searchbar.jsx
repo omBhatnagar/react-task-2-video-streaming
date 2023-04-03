@@ -15,7 +15,7 @@ const SearchBar = () => {
 	return (
 		<div
 			onClick={redirect}
-			className='flex justify-between items-stretch w-1/2 mt-3 mb-6 rounded-3xl border border-[#303030] overflow-hidden'
+			className='flex justify-between items-stretch w-full rounded-3xl border border-[#303030] overflow-hidden'
 		>
 			<input
 				type='text'
