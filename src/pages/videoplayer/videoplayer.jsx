@@ -12,15 +12,13 @@ const VideoPlayer = () => {
 	const { videoId } = useParams();
 
 	const [videoInfo, setVideoInfo] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		(async () => {
 			setVideoInfo([]);
-			setIsLoading(true);
+
 			const response = await getVideoStats(videoId);
 			const _videoInfo = await createVideoInfo(response.data.items[0]);
-			console.log(_videoInfo);
 			setVideoInfo(_videoInfo);
 		})();
 	}, [videoId]);
