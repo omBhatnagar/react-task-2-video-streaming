@@ -23,7 +23,7 @@ const Recommended = () => {
 
 	return (
 		<Layout>
-			<div className='flex flex-wrap justify-center items-stretch gap-4'>
+			<div className='w-11/12 mx-auto flex flex-wrap justify-center items-stretch gap-4'>
 				{isLoading
 					? Array(10).fill(<SkeletonCard />)
 					: videoCards.map((video) => (

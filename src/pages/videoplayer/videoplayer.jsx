@@ -41,7 +41,7 @@ const VideoPlayer = () => {
 
 	return (
 		<Layout>
-			<div className='flex justify-center items-center gap-2'>
+			<div className='flex justify-center items-start gap-3'>
 				<div className='w-2/3'>
 					<VideoEmbed videoId={videoId} />
 					<VideoDetails
@@ -57,7 +57,7 @@ const VideoPlayer = () => {
 					/>
 				</div>
 				<div className='w-1/4'>
-					<SideBarRecommended />
+					<SideBarRecommended title={videoInfo.title} />
 				</div>
 			</div>
 		</Layout>
