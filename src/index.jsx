@@ -1,15 +1,33 @@
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
-import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
+import Recommended from "./pages/recommended/recommended";
+import SearchPage from "./pages/searchpage/searchpage";
+import VideoPlayer from "./pages/videoplayer/videoplayer";
+
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <Recommended />,
+	},
+	{
+		path: "/search/:searchQuery",
+		element: <SearchPage />,
+	},
+	{
+		path: "/video/:videoId",
+		element: <VideoPlayer />,
+	},
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
-		<App />
+		<RouterProvider router={router} />
 	</React.StrictMode>,
 );
 

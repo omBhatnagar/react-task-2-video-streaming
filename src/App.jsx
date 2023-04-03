@@ -1,18 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/navbar/navbar";
 import Recommended from "./components/recommended/recommended";
-
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Recommended />,
-	},
-]);
+import SearchPage from "./components/recommended/searchpage/searchpage";
 
 function App() {
 	return (
-		<div>
-			<h1>NAVBAR</h1>
-			<RouterProvider router={router} />
+		<div className='bg-yt-black'>
+			<Navbar />
+			<Outlet></Outlet>
 		</div>
 	);
 }
