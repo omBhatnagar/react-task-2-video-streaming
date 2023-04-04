@@ -19,7 +19,7 @@ const Recommended = () => {
 			const response = await getRecommended();
 
 			if (response instanceof Array || response.data.items.length < 1) {
-				// setIsError(true);
+				setIsError(true);
 				setIsLoading(false);
 			} else {
 				const _videoCards = await createVideoCards(response.data.items);
@@ -33,99 +33,15 @@ const Recommended = () => {
 
 	if (isError) return <Error />;
 
-	const dummyData = [
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-		{
-			views: "10000",
-			channelImage:
-				"https://yt3.ggpht.com/eHXlWt1LNAkQDs4qs_LvawwKDedC7BGbWkQSHFRjc2is-N4YvAIWGecFUtKVwMgZt9sUoVRQ=s240-c-k-c0x00ffffff-no-rj",
-			timestamp: "2 day(s) ago",
-			channel: "test",
-			title: "Test video",
-			image: "https://i.ytimg.com/vi/XqRDWKSXg2Y/mqdefault.jpg",
-		},
-	];
-
 	return (
 		<Layout>
 			<div className='w-11/12 mx-auto flex flex-wrap justify-center items-stretch gap-4'>
 				{isLoading
 					? Array(10).fill(<SkeletonCard />)
-					: dummyData.map((video) => (
+					: videoCards.map((video) => (
 							<Link
 								to={`/video/${video.videoId}`}
-								className='sm:w-[5/6] lg:w-[28%]'
+								className='sm:w-5/6 sm:min-w-5/6 lg:w-[28%]'
 							>
 								<VideoCard
 									key={video.id}
