@@ -1,7 +1,7 @@
 const SkeletonCard = () => {
 	return (
 		<div className='bg-yt-black w-[25%] flex justify-center items-center'>
-			<div className='w-full'>
+			<div className='w-full animate-pulse'>
 				<div className='flex justify-center items-center overflow-hidden rounded-2xl'>
 					<div className='shrink-0 w-80 h-56 rounded-2xl bg-gray-600'></div>
 				</div>

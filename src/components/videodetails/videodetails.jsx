@@ -14,7 +14,7 @@ const VideoDetails = ({
 	subs,
 }) => {
 	return (
-		<div className='flex flex-col justify-cetner items-start gap-4 my-6'>
+		<div className='flex flex-col justify-center items-start gap-4 my-6 px-2'>
 			<h1 className='text-white font-semibold text-xl'>{title}</h1>
 			<div className='flex justify-between items-center pb-2 w-full'>
 				<div className='flex justify-center items-start gap-4'>

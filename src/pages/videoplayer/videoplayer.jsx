@@ -40,8 +40,8 @@ const VideoPlayer = () => {
 	return (
 		<Layout>
 			{!isLoading && (
-				<div className='flex justify-center items-start gap-3'>
-					<div className='w-2/3'>
+				<div className='flex flex-col justify-start items-center xl:flex-row xl:justify-center xl:items-start gap-3'>
+					<div className='w-full xl:w-2/3'>
 						<VideoEmbed videoId={videoId} />
 						<VideoDetails
 							title={videoInfo.title}
@@ -55,7 +55,7 @@ const VideoPlayer = () => {
 							subs={videoInfo.subs}
 						/>
 					</div>
-					<div className='w-1/4'>
+					<div className='w-11/12 xl:w-1/4'>
 						<SideBarRecommended title={videoInfo.title} />
 					</div>
 				</div>
