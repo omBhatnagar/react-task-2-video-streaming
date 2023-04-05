@@ -23,6 +23,7 @@ const Recommended = () => {
 				setIsLoading(false);
 			} else {
 				const _videoCards = await createVideoCards(response.data.items);
+				console.log(_videoCards);
 				setVideoCards(_videoCards);
 				setIsLoading(false);
 				setIsError(false);
@@ -38,7 +39,10 @@ const Recommended = () => {
 				{isLoading
 					? Array(10).fill(<SkeletonCard />)
 					: videoCards.map((video) => (
-							<Link to={`/video/${video.videoId}`} className='w-[28%]'>
+							<Link
+								to={`/video/${video.videoId}`}
+								className='sm:w-5/6 sm:min-w-5/6 lg:w-[28%]'
+							>
 								<VideoCard
 									key={video.id}
 									image={video.image}

@@ -8,11 +8,17 @@ const SearchRow = ({
 	image,
 }) => {
 	return (
-		<div className='w-2/3 mx-auto flex justify-center items-start gap-4 mb-6'>
-			<img src={image} alt='' className='rounded-xl' />
-			<div className='flex flex-col justify-start items-start gap-2 grow'>
+		<div className='w-full lg:w-2/3 mx-auto flex flex-col sm:flex-row justify-start items-center sm:justify-center sm:items-start gap-4 mb-6'>
+			<div className='flex w-full sm:w-1/2'>
+				<img
+					src={image}
+					alt=''
+					className='rounded-xl flex-grow sm:max-w-full sm:max-h-full'
+				/>
+			</div>
+			<div className='flex flex-col justify-start items-start gap-2 grow w-full sm:w-1/2 px-1 sm:px-0'>
 				<div>
-					<h3 className='font-semibold text-xl'>{title}</h3>
+					<h3 className='font-semibold text-md sm:text-xl'>{title}</h3>
 					<p className='text-gray-400 text-sm'>
 						{views} views • {timestamp}
 					</p>
@@ -25,7 +31,7 @@ const SearchRow = ({
 						<div className='text-gray-400 text-sm'>{channel}</div>
 					</div>
 				</div>
-				<p className='text-gray-400 text-sm'>{description}</p>
+				<p className='text-gray-400 text-sm hidden sm:block'>{description}</p>
 			</div>
 		</div>
 	);

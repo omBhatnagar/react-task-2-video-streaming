@@ -6,7 +6,7 @@ const Error = () => {
 		<Layout>
 			<div className='flex flex-col justify-center items-center h-screen gap-8'>
 				<BiMessageSquareError className='text-gray-600 text-3xl' />
-				<p className='text-gray-600 text-xl'>Uh oh... Something went wrong!</p>
+				<p className='text-gray-600 text-xl'>Uh oh... something went wrong!</p>
 			</div>
 		</Layout>
 	);

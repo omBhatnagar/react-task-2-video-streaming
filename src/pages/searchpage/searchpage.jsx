@@ -36,7 +36,7 @@ const SearchPage = () => {
 
 	return (
 		<Layout>
-			<div className='text-white w-11/12 mx-auto'>
+			<div className='text-white w-11/12 lg:w-5/6 mx-auto'>
 				{isLoading
 					? Array(10).fill(<SearchRowSkeleton />)
 					: searchResults.map((item) => (

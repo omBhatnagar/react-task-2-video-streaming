@@ -3,7 +3,7 @@ import SearchBar from "../searchbar/searchbar";
 
 const Navbar = () => {
 	return (
-		<div className='py-3 sticky top-0 bg-yt-black'>
+		<div className='py-3 sticky top-0 bg-yt-black z-10'>
 			<div className='flex justify-start items-center w-5/6 mx-auto'>
 				<div className='w-1/4'>
 					<Link to='/'>
