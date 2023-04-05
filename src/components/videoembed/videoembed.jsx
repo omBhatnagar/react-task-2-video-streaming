@@ -7,23 +7,18 @@ const VideoEmbed = ({ videoId }) => {
 		width: "920",
 	});
 
-	const updateVideoPlayerDimensions = () => {
-		let width = window.innerWidth;
-		// if (width < 1235) setOpts({ width: "720", height: "380" });
-		// if (width < 1235) setOpts({ width: "720", height: "380" });
-		// if (width < 1280) setOpts({ width: "1020", height: "480" });
-		// if (width < 1390) setOpts({ width: "820", height: "480" });
-	};
-
 	useEffect(() => {
 		let width = window.innerWidth;
+		let newWidth;
+		let newHeight;
+
 		if (width < 1280) {
-			setOpts({ width: String(width), height: "480" });
-		} else
-			setOpts({ width: String(width - (34 / 100) * width), height: "740" });
-		window.addEventListener("resize", updateVideoPlayerDimensions);
-		return () =>
-			window.removeEventListener("resize", updateVideoPlayerDimensions);
+			setOpts({ width: width, height: (width * 9) / 16 }); //Height is set accordingly to maintain 16:9 aspect ratio
+		} else {
+			newWidth = width - (34 / 100) * width;
+			newHeight = (newWidth * 9) / 16;
+			setOpts({ width: newWidth, height: newHeight });
+		}
 	}, []);
 
 	return (
