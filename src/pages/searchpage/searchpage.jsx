@@ -39,8 +39,8 @@ const SearchPage = () => {
 			<div className='text-white w-11/12 lg:w-5/6 mx-auto'>
 				{isLoading
 					? Array(10).fill(<SearchRowSkeleton />)
-					: searchResults.map((item) => (
-							<Link to={`/video/${item.videoId}`}>
+					: searchResults.map((item, index) => (
+							<Link to={`/video/${item.videoId}`} key={index}>
 								<SearchRow
 									title={item.title}
 									image={item.image}

@@ -7,7 +7,7 @@ const SkeletonCard = () => {
 				</div>
 				<div className='mt-3 flex items-start space-x-2'>
 					<div className='flex-shrink-0 w-9 h-9 rounded-full overflow-hidden bg-white mt-1'>
-						<div class='w-9 h-9 bg-gray-600 rounded-full' />
+						<div className='w-9 h-9 bg-gray-600 rounded-full' />
 					</div>
 					<div className='flex flex-col text-md tracking-tighter leading-tight animate-pulse'>
 						<div className='bg-gray-600 w-60 h-4 rounded-sm'></div>

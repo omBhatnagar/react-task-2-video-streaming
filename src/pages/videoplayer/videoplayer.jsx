@@ -39,29 +39,33 @@ const VideoPlayer = () => {
 
 	return (
 		<Layout>
-			{!isLoading && (
-				<div className='flex flex-col justify-start items-center xl:flex-row xl:justify-center xl:items-start gap-3'>
-					<div className='w-full xl:w-2/3'>
-						<VideoEmbed videoId={videoId} />
-						<VideoDetails
-							title={videoInfo.title}
-							description={videoInfo.description}
-							publishedDate={videoInfo.publishedDate}
-							channelTitle={videoInfo.channelTitle}
-							channelImage={videoInfo.channelImage}
-							viewCount={videoInfo.viewCount}
-							likeCount={videoInfo.likeCount}
-							dislikeCount={videoInfo.dislikeCount}
-							subs={videoInfo.subs}
-						/>
-					</div>
-					<div className='w-11/12 xl:w-1/4'>
-						<SideBarRecommended title={videoInfo.title} />
-					</div>
-				</div>
-			)}
+			{!isLoading && <YoutubePlayer videoId={videoId} videoInfo={videoInfo} />}
 		</Layout>
 	);
 };
+
+const YoutubePlayer = ({ videoId, videoInfo }) => (
+	<div className='flex flex-col justify-start items-center xl:flex-row xl:justify-center xl:items-start gap-3'>
+		<div className='w-full xl:w-2/3'>
+			<VideoEmbed videoId={videoId} />
+			<VideoDetails
+				title={videoInfo.title}
+				description={videoInfo.description}
+				publishedDate={videoInfo.publishedDate}
+				channelTitle={videoInfo.channelTitle}
+				channelImage={videoInfo.channelImage}
+				viewCount={videoInfo.viewCount}
+				likeCount={videoInfo.likeCount}
+				dislikeCount={videoInfo.dislikeCount}
+				subs={videoInfo.subs}
+			/>
+		</div>
+		<div className='w-11/12 xl:w-1/4'>
+			<SideBarRecommended title={videoInfo.title} />
+		</div>
+	</div>
+);
+
+const MoviePlayer = () => <h1>Movies will be played here.</h1>;
 
 export default VideoPlayer;
